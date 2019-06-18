@@ -73,7 +73,7 @@ at block: 18 (Tue, 18 Jun 2019 14:09:56 CEST)
 > INFO [06-18|14:27:02.470] New local node record                    seq=6 id=565df4c30eb4075e ip=37.11.138.20 udp=30303 tcp=30303
 > personal.unlockAccount(eth.coinbase, '')
 true
-> eth.sendTransaction({from:eth.coinbase, to:eth.accounts[1], value: web3.toWei(1, "ether")})
+> eth.sendTransaction({from: eth.coinbase, to: eth.accounts[1], value: web3.toWei(1, "ether")})
 INFO [06-18|14:29:49.205] Setting new local account                address=0x19bc75fe9569c09F9e06500Ea0bbb4D189F2B514
 INFO [06-18|14:29:49.211] Submitted transaction                    fullhash=0x6df0c28855ee96dc9f837b3028306e73765ea1f1cac884a61ce85cc2f3811cfc recipient=0x9C2b412Dc2E8D203B8eA62d2922CD6e7FEB2999c
 "0x6df0c28855ee96dc9f837b3028306e73765ea1f1cac884a61ce85cc2f3811cfc"
@@ -122,3 +122,24 @@ at block: 39 (Tue, 18 Jun 2019 14:39:03 CEST)
 
 Podemos comprobar que la primera cuenta tiene un saldo mayor que en el ejercicio 1 dado que acabamos de minar
 unos cuantos bloques. Aún así se puede apreciar que la cuenta 2 tiene un saldo de 1 ETH, tal y como se esperaba.
+
+
+
+Para la segunda parte del ejercicio veamos primeramente una captura de pantalla con los saldos iniciales:
+
+![original balances](./images/balances_1.png)
+
+
+A continuación vamos a transferir 1 ETH desde la primera a la segunda cuenta usando la consola de _truffle_:
+
+```
+$ truffle console
+truffle(development)> web3.eth.sendTransaction({from: web3.eth.coinbase, to: web3.eth.accounts[1], value: web3.toWei(1, "ether")})
+'0x6433bd82725304141f2d9b1404574fcc408c6a14745297f2f96240f1adc547dd'
+```
+
+El nuevo balance queda reflejado en la siguiente captura de pantalla:
+
+![new balances](./images/balances_2.png)
+
+Como se puede apreciar la primera cuenta ha transferido 1 ETH a la segunda.
