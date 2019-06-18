@@ -30,14 +30,14 @@ $ solc --optimize --opcodes example.sol
 ```
 
 
-Para obtener el ABI se ha ejecutado el siguiente comando:
+Para obtener los idenficadores de las funciones se ha ejecutado el siguiente comando:
 
 ```
-$ solc --optimize --abi example.sol
+$ solc --optimize --hashes example.sol
   
-  ======= example.sol:Example =======
-  Contract JSON ABI
-  [{"constant":false,"inputs":[],"name":"changeOwner","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]
+======= example.sol:Example =======
+Function signatures:
+62a09477: changeOwner()
 ```
 
 
